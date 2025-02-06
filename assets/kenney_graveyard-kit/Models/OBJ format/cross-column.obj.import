@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cmfiwxcko2wqv"
+path="res://.godot/imported/cross-column.obj-d5fd51e8c42c988ac2d1ffb64f73837c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cross-column.obj-d5fd51e8c42c988ac2d1ffb64f73837c.mesh"]
+
+source_file="res://assets/kenney_graveyard-kit/Models/OBJ format/cross-column.obj"
+dest_files=["res://.godot/imported/cross-column.obj-d5fd51e8c42c988ac2d1ffb64f73837c.mesh", "res://.godot/imported/cross-column.obj-d5fd51e8c42c988ac2d1ffb64f73837c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

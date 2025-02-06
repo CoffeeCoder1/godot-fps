@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://7dw4yaf0vvws"]
+
+[ext_resource type="PackedScene" uid="uid://ccuq4l1ahpeib" path="res://assets/kenney_graveyard-kit/Models/GLB format/altar-wood.glb" id="1_vgfc1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j75ff"]
+size = Vector3(1.05811, 0.498291, 0.653442)
+
+[node name="WoodAltar" type="Node3D"]
+
+[node name="altar-wood2" parent="." instance=ExtResource("1_vgfc1")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0012207, 0.250854, 6.10352e-05)
+shape = SubResource("BoxShape3D_j75ff")

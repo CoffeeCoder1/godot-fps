@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkedfnv5js6sh"]
+
+[ext_resource type="PackedScene" uid="uid://cxtv8c1s7awn4" path="res://assets/kenney_graveyard-kit/Models/GLB format/lantern-glass.glb" id="1_4c0mk"]
+
+[node name="GlassLantern" type="Node3D"]
+
+[node name="lantern-glass2" parent="." instance=ExtResource("1_4c0mk")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+light_color = Color(0.90794, 0.521314, 0.295611, 1)
+light_energy = 0.17

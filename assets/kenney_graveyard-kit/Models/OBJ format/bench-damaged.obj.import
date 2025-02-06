@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cqurehaajrmqi"
+path="res://.godot/imported/bench-damaged.obj-0739eea582b9f7d3748c687a48a1c2ab.mesh"
+
+[deps]
+
+files=["res://.godot/imported/bench-damaged.obj-0739eea582b9f7d3748c687a48a1c2ab.mesh"]
+
+source_file="res://assets/kenney_graveyard-kit/Models/OBJ format/bench-damaged.obj"
+dest_files=["res://.godot/imported/bench-damaged.obj-0739eea582b9f7d3748c687a48a1c2ab.mesh", "res://.godot/imported/bench-damaged.obj-0739eea582b9f7d3748c687a48a1c2ab.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
