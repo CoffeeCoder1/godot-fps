@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://sbi772qgqqgg"]
+
+[ext_resource type="Script" uid="uid://2ce0fti3fkqb" path="res://scenes/prefabs/cube/cube.gd" id="1_70kpq"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_tuenu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vyrid"]
+
+[node name="Cube" type="RigidBody3D"]
+script = ExtResource("1_70kpq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_tuenu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_vyrid")

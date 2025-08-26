@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://c3gqua8pjxt3p"]
+
+[ext_resource type="PackedScene" uid="uid://cy0gxuf1bwpnp" path="res://assets/kenney_graveyard-kit/Models/GLB format/character-zombie.glb" id="1_cg48l"]
+[ext_resource type="Script" uid="uid://drxl5odk67r8t" path="res://scenes/zombie/zombie.gd" id="2_6mvc3"]
+[ext_resource type="PackedScene" uid="uid://cn2csfjmeh1nd" path="res://scenes/ui/health_bar/health_bar.tscn" id="3_6mvc3"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_6mvc3"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_6mvc3"]
+viewport_path = NodePath("TitleBar")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r1l86"]
+resource_local_to_scene = true
+transparency = 1
+albedo_texture = SubResource("ViewportTexture_6mvc3")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ncyl7"]
+radius = 0.2
+height = 0.8
+
+[node name="Zombie" instance=ExtResource("1_cg48l")]
+script = ExtResource("2_6mvc3")
+
+[node name="arm-left" parent="character-zombie/root/torso" index="0"]
+transform = Transform3D(0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0, 1, 0.15, 0.2, 0.0025)
+
+[node name="arm-right" parent="character-zombie/root/torso" index="1"]
+transform = Transform3D(0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, -0.15, 0.2, 0.0025)
+
+[node name="AnimationPlayer" parent="." index="1"]
+unique_name_in_owner = true
+
+[node name="TitleBar" type="SubViewport" parent="." index="2"]
+transparent_bg = true
+size = Vector2i(512, 256)
+
+[node name="HealthBar" parent="TitleBar" index="0" instance=ExtResource("3_6mvc3")]
+unique_name_in_owner = true
+
+[node name="TitleBarMesh" type="MeshInstance3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("QuadMesh_6mvc3")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_r1l86")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+shape = SubResource("CapsuleShape3D_ncyl7")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." index="5"]

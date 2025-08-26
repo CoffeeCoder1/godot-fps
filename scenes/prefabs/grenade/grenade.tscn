@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://b0hcqdw2rjtf8"]
+
+[ext_resource type="Script" uid="uid://ccw8xkho5al0o" path="res://scenes/prefabs/grenade/grenade.gd" id="1_7a3pg"]
+[ext_resource type="PackedScene" uid="uid://clxhi1apacfua" path="res://scenes/prefabs/explosion/explosion.tscn" id="2_1ysfc"]
+[ext_resource type="PackedScene" uid="uid://b2ia4v2qeemuj" path="res://assets/models/grenade.blend" id="2_8dbpc"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8dbpc"]
+radius = 0.2
+height = 0.6
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mhcbq"]
+
+[node name="Grenade" type="RigidBody3D"]
+script = ExtResource("1_7a3pg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+shape = SubResource("CapsuleShape3D_8dbpc")
+
+[node name="Model" parent="." instance=ExtResource("2_8dbpc")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AreaOfExplosion" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AreaOfExplosion"]
+shape = SubResource("SphereShape3D_mhcbq")
+
+[node name="Explosion" parent="." instance=ExtResource("2_1ysfc")]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="finished" from="Explosion" to="." method="_on_explosion_finished"]

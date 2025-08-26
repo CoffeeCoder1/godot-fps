@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://b25820hdtqryk"]
+
+[ext_resource type="PackedScene" uid="uid://bv3xvl1dolhrs" path="res://scenes/prefabs/lazer/box™️.tscn" id="1_lsjd2"]
+[ext_resource type="PackedScene" uid="uid://c8ni4a3winddq" path="res://scenes/prefabs/lazer/lazer.tscn" id="2_7ah5c"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_73cdi"]
+size = Vector2(15, 15)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vpjle"]
+sky_top_color = Color(0.205968, 0.252119, 0.316302, 1)
+sky_horizon_color = Color(0.692388, 0.420999, 0.406527, 1)
+ground_horizon_color = Color(0.689127, 0.423, 0.422673, 1)
+
+[sub_resource type="Sky" id="Sky_xnp20"]
+sky_material = SubResource("ProceduralSkyMaterial_vpjle")
+
+[sub_resource type="Environment" id="Environment_388ks"]
+background_mode = 2
+sky = SubResource("Sky_xnp20")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Demo" type="Node3D"]
+
+[node name="Plane" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_73cdi")
+
+[node name="Box™️" parent="." instance=ExtResource("1_lsjd2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.25, 0)
+
+[node name="Box™️2" parent="." instance=ExtResource("1_lsjd2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.25, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.56586, -0.677785, 0.469478, 0, 0.569409, 0.822055, -0.824502, -0.465167, 0.322205, 9.69692, 15.136, 7.16803)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_388ks")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.870442, 0.492272, 0, -0.492272, 0.870442, 0, 2.33796, 3.46491)
+fov = 64.6875
+
+[node name="Lazer" parent="." instance=ExtResource("2_7ah5c")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0.318327, 0)

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://n4b08ltrg8aq"]
+
+[ext_resource type="PackedScene" uid="uid://d1c2riqwik6vi" path="res://scenes/prefabs/crypt/crypt_mesh.tscn" id="1_l5lly"]
+
+[node name="Crypt" type="Node3D"]
+
+[node name="CryptMesh" parent="." instance=ExtResource("1_l5lly")]

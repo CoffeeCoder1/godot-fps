@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://5eiu043mun5"]
+
+[ext_resource type="Texture2D" uid="uid://0hwy5d8fkpxt" path="res://assets/textures/rocky_trail_4k.gltf/textures/rocky_trail_diff_4k.jpg" id="1_y3e3e"]
+[ext_resource type="Texture2D" uid="uid://dxse7bdwpcibo" path="res://assets/textures/rocky_trail_4k.gltf/textures/rocky_trail_arm_4k.jpg" id="2_0ods8"]
+[ext_resource type="Texture2D" uid="uid://bsmsqgte1br7m" path="res://assets/textures/rocky_trail_4k.gltf/textures/rocky_trail_nor_gl_4k.jpg" id="3_h8niy"]
+
+[resource]
+resource_name = "rocky_trail"
+cull_mode = 2
+albedo_texture = ExtResource("1_y3e3e")
+metallic_texture = ExtResource("2_0ods8")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_0ods8")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_h8niy")
+uv1_scale = Vector3(10, 10, 10)
+uv2_scale = Vector3(10, 10, 10)

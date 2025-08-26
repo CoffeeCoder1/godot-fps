@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8ni4a3winddq"]
+
+[ext_resource type="Script" uid="uid://f0orqut4rrio" path="res://scenes/prefabs/lazer/lazer.gd" id="1_gjvgk"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1oimv"]
+top_radius = 0.05
+bottom_radius = 0.05
+height = 0.02
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lagts"]
+transparency = 1
+albedo_color = Color(1, 0.164706, 0.0470588, 0.498039)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 1.27
+
+[node name="Lazer" type="RayCast3D"]
+target_position = Vector3(0, -10, 0)
+script = ExtResource("1_gjvgk")
+
+[node name="Beam" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+mesh = SubResource("CylinderMesh_1oimv")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_lagts")

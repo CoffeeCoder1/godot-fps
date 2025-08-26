@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcudommurn0nd"]
+
+[ext_resource type="Script" uid="uid://ds61vkf8i57w2" path="res://scenes/evil_ai/evil_ai.gd" id="1_ssbji"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ssbji"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nwkqr"]
+
+[node name="EvilAI" type="CharacterBody3D"]
+script = ExtResource("1_ssbji")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_ssbji")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_nwkqr")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]

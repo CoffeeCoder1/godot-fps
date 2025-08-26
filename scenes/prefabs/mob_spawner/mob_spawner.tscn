@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c18lq653at47u"]
+
+[ext_resource type="Script" uid="uid://bk27374npt0lt" path="res://scenes/prefabs/mob_spawner/mob_spawner.gd" id="1_nuh5y"]
+[ext_resource type="PackedScene" uid="uid://sbi772qgqqgg" path="res://scenes/prefabs/cube/cube.tscn" id="2_jvbvw"]
+
+[node name="MobSpawner" type="Node3D"]
+script = ExtResource("1_nuh5y")
+mob_prefab = ExtResource("2_jvbvw")
+metadata/_custom_type_script = "uid://bk27374npt0lt"
+
+[node name="SpawnPoint" type="Marker3D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_spawn"]
